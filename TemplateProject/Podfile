@@ -1,0 +1,17 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '13.0'
+
+target 'TemplateProject' do
+    pod 'Alamofire'
+    pod 'ReachabilitySwift'
+    pod 'SVProgressHUD'
+    pod 'IQKeyboardManagerSwift'
+    pod 'MJRefresh'
+    pod 'SDWebImage'
+    pod 'FDFullscreenPopGesture'
+    pod 'SnapKit'
+    pod 'YYModel'
+    pod 'FMDB'
+    pod 'TZImagePickerController'
+    pod 'ZLPhotoBrowser'
+end
