@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 import Reachability
 
+private let connectionTypeChangedKey = "connectionTypeChangedKey"
+
 typealias callBackHandler = (_ success: Bool, _ responseData: Any?) ->Void
 
 typealias resultHandler = (_ success: Bool, _ resultMessage: String?) ->Void
@@ -43,52 +45,27 @@ class NetWorkManager: NSObject {
     
     private var pm_connectionType: ConnectionType = .none
     
-    func startManager(){
-        //网络状态监听
-        NotificationCenter.default.addObserver(self, selector: #selector(connectChanged), name: Notification.Name.connectionTypeChanged, object: nil)
-    }
+    private var pm_netListenner:Reachability = try! Reachability.init()
     
-    func stopManager(){
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    //网络状态改变设置
-    @objc private func connectChanged(obj:Notification){
+    func startListenner(){
         
-        if let reac = obj.userInfo as? Dictionary<String, ConnectionType>{
-            
-            switch reac.values.first! {
-                
-            case .cellular:
-                pm_connectionType = .cellular
-                break
-                
-            case .none:
-                pm_connectionType = .none
-                break
-                
-            case .wifi:
-                pm_connectionType = .wifi
-                break
-                
-            case .unavailable:
-                pm_connectionType = .unavailable
-                break
-            }
-        }
+        //网络状态监听
+        NotificationCenter.default.addObserver(self, selector: #selector(connectChanged), name: Notification.Name.reachabilityChanged, object: pm_netListenner)
+        
+        try? pm_netListenner.startNotifier()
+    }
+    
+    func stopListenner(){
+        pm_netListenner.stopNotifier()
+        NotificationCenter.default.removeObserver(self)
     }
     
     func sendRequest(param: Dictionary<String, AnyObject>, requestURL: String, _ method: String = "POST", completeHandler: @escaping callBackHandler){
         
         switch  m_connectionType{
-        case .none:
+        case .none, .unavailable:
             completeHandler(false, ErrorString.无网络)
             return
-            
-        case .unavailable:
-            completeHandler(false, ErrorString.网络不可用)
-            return
-            
         default:
             break
         }
@@ -124,5 +101,32 @@ class NetWorkManager: NSObject {
                 break
             }
         }
+    }
+    
+    //网络状态改变设置
+    @objc private func connectChanged(obj:Notification){
+
+        if let reac = obj.object as? Reachability{
+
+            switch reac.connection {
+
+            case .cellular:
+                pm_connectionType = .cellular
+                break
+
+            case .none:
+                pm_connectionType = .none
+                break
+
+            case .wifi:
+                pm_connectionType = .wifi
+                break
+
+            case .unavailable:
+                pm_connectionType = .unavailable
+                break
+            }
+        }
+        SVProgressHUD_Extension.showInfo(withStatus: pm_connectionType.rawValue)
     }
 }

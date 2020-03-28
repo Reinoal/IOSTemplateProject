@@ -12,7 +12,6 @@ class SkinManager: NSObject {
 
     static let manager: SkinManager = {return SkinManager()}(); private override init() {}
     
-    
     enum Skin {
         case red
         case blue

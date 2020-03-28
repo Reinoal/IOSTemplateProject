@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import Reachability
-
-private let connectionTypeChangedKey = "connectionTypeChangedKey"
 
 /// log 打印
 public func DebugLog<T>(_ message:T, fileName:String = #file, method:String = #function, line:Int = #line){
@@ -22,47 +19,16 @@ public func DebugLog<T>(_ message:T, fileName:String = #file, method:String = #f
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    private var netListenner:Reachability = try! Reachability.init()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        NetWorkManager.manager.startManager()
-        //网络状态监听
-        NotificationCenter.default.addObserver(self, selector: #selector(connectChanged), name: Notification.Name.reachabilityChanged, object: netListenner)
-        
-        try? netListenner.startNotifier()
-        
+        NetWorkManager.manager.startListenner()
         
         return true
     }
 
-    //网络状态改变设置
-    @objc private func connectChanged(obj:Notification){
-        
-        if let reac = obj.object as? Reachability{
-            
-            switch reac.connection {
-                
-            case .cellular:
-                NotificationCenter.default.post(name: NSNotification.Name.connectionTypeChanged, object: nil, userInfo: [connectionTypeChangedKey:NetWorkManager.ConnectionType.cellular])
-                break
-                
-            case .none:
-                NotificationCenter.default.post(name: NSNotification.Name.connectionTypeChanged, object: nil, userInfo: [connectionTypeChangedKey:NetWorkManager.ConnectionType.none])
-                break
-                
-            case .wifi:
-                NotificationCenter.default.post(name: NSNotification.Name.connectionTypeChanged, object: nil, userInfo: [connectionTypeChangedKey:NetWorkManager.ConnectionType.wifi])
-                break
-                
-            case .unavailable:
-                NotificationCenter.default.post(name: NSNotification.Name.connectionTypeChanged, object: nil, userInfo: [connectionTypeChangedKey:NetWorkManager.ConnectionType.unavailable])
-                break
-            }
-        }
-    }
+    
     
     // MARK: UISceneSession Lifecycle
 
@@ -80,8 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func applicationWillTerminate(_ application: UIApplication) {
-        netListenner.stopNotifier()
-        NetWorkManager.manager.stopManager()
+        
+        NetWorkManager.manager.stopListenner()
     }
 }
 
