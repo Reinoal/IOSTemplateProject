@@ -19,6 +19,7 @@
 		1546370B242F2DC400D84E97 /* TextInputVerify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546370A242F2DC400D84E97 /* TextInputVerify.swift */; };
 		1546370D242F410800D84E97 /* SVProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546370C242F410800D84E97 /* SVProgressHUD+Extension.swift */; };
 		1546370F242F4B8900D84E97 /* ConvertDataToNongLi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546370E242F4B8800D84E97 /* ConvertDataToNongLi.swift */; };
+		154637112431C06200D84E97 /* MultipleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154637102431C06200D84E97 /* MultipleViewController.swift */; };
 		15C387F1242527AD007DC46F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C387F0242527AD007DC46F /* AppDelegate.swift */; };
 		15C387F3242527AD007DC46F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C387F2242527AD007DC46F /* SceneDelegate.swift */; };
 		15C387FA242527AF007DC46F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15C387F9242527AF007DC46F /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		1546370A242F2DC400D84E97 /* TextInputVerify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputVerify.swift; sourceTree = "<group>"; };
 		1546370C242F410800D84E97 /* SVProgressHUD+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SVProgressHUD+Extension.swift"; sourceTree = "<group>"; };
 		1546370E242F4B8800D84E97 /* ConvertDataToNongLi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertDataToNongLi.swift; sourceTree = "<group>"; };
+		154637102431C06200D84E97 /* MultipleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleViewController.swift; sourceTree = "<group>"; };
 		15C387ED242527AD007DC46F /* TemplateProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C387F0242527AD007DC46F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15C387F2242527AD007DC46F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				154636F7242DD3C200D84E97 /* HomeViewController.swift */,
+				154637102431C06200D84E97 /* MultipleViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				15463702242DEEEC00D84E97 /* DatePickerController.swift in Sources */,
 				15C388242425BC56007DC46F /* Notification.name+Extension.swift in Sources */,
 				15C388252425BC56007DC46F /* String+Extension.swift in Sources */,
+				154637112431C06200D84E97 /* MultipleViewController.swift in Sources */,
 				15C388262425BC56007DC46F /* CGFloat+Extension.swift in Sources */,
 				15463704242DEF6E00D84E97 /* Date+Extension.swift in Sources */,
 				154636F6242DD3B200D84E97 /* BaseViewController.swift in Sources */,
