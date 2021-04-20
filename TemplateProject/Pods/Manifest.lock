@@ -13,6 +13,7 @@ PODS:
   - SnapKit (5.0.1)
   - SVProgressHUD (2.2.5)
   - TZImagePickerController (3.3.1)
+  - WMZPageController (1.1.6)
   - YYModel (1.0.4)
   - ZLPhotoBrowser (3.1.3):
     - SDWebImage
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - SnapKit
   - SVProgressHUD
   - TZImagePickerController
+  - WMZPageController
   - YYModel
   - ZLPhotoBrowser
 
@@ -43,6 +45,7 @@ SPEC REPOS:
     - SnapKit
     - SVProgressHUD
     - TZImagePickerController
+    - WMZPageController
     - YYModel
     - ZLPhotoBrowser
 
@@ -57,9 +60,10 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TZImagePickerController: 99f03b64145a8c92c55b9b1b931410967d9be4cb
+  WMZPageController: 3d4ab64fc7f246faa7d5726efbdb8624bc700095
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZLPhotoBrowser: e6c1dc3a35a89efd1e88545225c6de66384597d0
 
-PODFILE CHECKSUM: 2807f3ab45fc91e298bbf7a5496761c1244bf155
+PODFILE CHECKSUM: d5775b5850da59d82adce8b14dddbd22b17b9490
 
 COCOAPODS: 1.8.4

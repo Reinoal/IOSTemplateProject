@@ -122,7 +122,7 @@ class DateView:UIView{
     
     private lazy var titleL:UILabel = {
         
-        let l = UILabel.lableWith(text: "", textColor: .white, bgColor: .clear, cornerRadius: 0)
+        let l = UILabel.init(title: nil, font: nil, color: .white, nil, 0)
         l.textAlignment = .center
         l.font = .font_16
         return l

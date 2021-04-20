@@ -18,7 +18,7 @@ class MainTabBarController: UITabBarController {
         view.backgroundColor = .white
         
         addChildController(HomeViewController(), title: "首页", titleColor: .lightText, selectedColor: .orange, image: "", selectedImage: "")
-        addChildController(HomeViewController(), title: "首页2", titleColor: .lightText, selectedColor: .orange, image: "", selectedImage: "")
+        addChildController(MultipleViewController(), title: "首页2", titleColor: .lightText, selectedColor: .orange, image: "", selectedImage: "")
     }
     
 

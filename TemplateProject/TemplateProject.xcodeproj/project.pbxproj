@@ -39,6 +39,7 @@
 		15C3882D2425BE51007DC46F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C3882C2425BE51007DC46F /* LaunchScreen.storyboard */; };
 		15C3882F2425C676007DC46F /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3882E2425C676007DC46F /* NetWorkManager.swift */; };
 		15C388312425D2CA007DC46F /* Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C388302425D2CA007DC46F /* Exception.swift */; };
+		A097FB07A890DA65453ED06C /* libPods-TemplateProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1142EB25764DF78CE4409A69 /* libPods-TemplateProject.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		1546370C242F410800D84E97 /* SVProgressHUD+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SVProgressHUD+Extension.swift"; sourceTree = "<group>"; };
 		1546370E242F4B8800D84E97 /* ConvertDataToNongLi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertDataToNongLi.swift; sourceTree = "<group>"; };
 		154637102431C06200D84E97 /* MultipleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleViewController.swift; sourceTree = "<group>"; };
+		154E8BBE243898C900A9A491 /* TigaseSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TigaseSwift.framework; sourceTree = "<group>"; };
 		15C387ED242527AD007DC46F /* TemplateProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C387F0242527AD007DC46F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15C387F2242527AD007DC46F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A097FB07A890DA65453ED06C /* libPods-TemplateProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +207,14 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
+		154E8A2D24387BCC00A9A491 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				154E8BBE243898C900A9A491 /* TigaseSwift.framework */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
 		15C387E4242527AD007DC46F = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +258,7 @@
 		15C388052425BC56007DC46F /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				154E8A2D24387BCC00A9A491 /* Lib */,
 				15463705242DF01B00D84E97 /* Constant */,
 				15463700242DEECF00D84E97 /* Tool */,
 				154636FB242DD48700D84E97 /* Protocol */,
@@ -647,12 +659,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8J34388U6P;
+				DEVELOPMENT_TEAM = ZDGCHF5A5J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TemplateProject/Class/Lib",
+					"$(PROJECT_DIR)/TemplateProject/Class/Lib/TigaseSwift",
+				);
 				INFOPLIST_FILE = TemplateProject/Other/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TemplateProject/Class/Lib",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -708,12 +729,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8J34388U6P;
+				DEVELOPMENT_TEAM = ZDGCHF5A5J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TemplateProject/Class/Lib",
+					"$(PROJECT_DIR)/TemplateProject/Class/Lib/TigaseSwift",
+				);
 				INFOPLIST_FILE = TemplateProject/Other/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TemplateProject/Class/Lib",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

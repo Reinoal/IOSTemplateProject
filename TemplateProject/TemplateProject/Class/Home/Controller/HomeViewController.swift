@@ -5,7 +5,6 @@
 //  Created by Reinoal on 2020/3/27.
 //  Copyright © 2020 RDX. All rights reserved.
 //
-
 import UIKit
 
 class HomeViewController: BaseViewController {
@@ -48,7 +47,6 @@ class HomeViewController: BaseViewController {
     
     lazy var textInputV: UITextField =  {
         let tf = UITextField()
-        tf.backgroundColor = .light200
         return tf
     }()
     override func viewDidLoad() {
@@ -63,12 +61,20 @@ class HomeViewController: BaseViewController {
         showSinglePickerBtn.addTarget(self, action: #selector(showSinglePicker), for: .touchUpInside)
         verifyPhoneNumberBtn.addTarget(self, action: #selector(verifyPhone), for: .touchUpInside)
         verifyPasswordBtn.addTarget(self, action: #selector(verifyPwd), for: .touchUpInside)
-        
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewSafeAreaInsetsDidChange() {
         
+        setConstraints()
+    }
+    
+    fileprivate func setConstraints(){
         showDatePickerBtn.snp.makeConstraints { (make) in
             make.width.equalTo((view.width - 150) / 2)
             make.height.equalTo(50)
